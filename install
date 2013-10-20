@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+sudo apt-get install -y python-pip
+
+sudo pip install virtualenv virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Add to .bashrc
+# Virtualenvwrapper
+#export WORKON_HOME=$HOME/.virtualenvs
+#source /usr/local/bin/virtualenvwrapper.sh
+
+
+mkvirtualenv gabinet
+cd ~
+mkdir projects;cd projects
+git clone git@github.com:BStalewski/gabinet.git;cd gabinet
+
+pip install -r pip_requirements
