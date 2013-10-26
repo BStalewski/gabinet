@@ -4,8 +4,6 @@ import os
 
 THIS_DIR = os.path.dirname(__file__)
 PROJECT_DIR = os.path.dirname(THIS_DIR)
-print 'THIS_DIR', THIS_DIR
-print 'PROJECT_DIR', PROJECT_DIR
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
