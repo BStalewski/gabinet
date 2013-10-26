@@ -1,5 +1,10 @@
 # Django settings for gabinet project.
 
+import os
+
+THIS_DIR = os.path.dirname(__file__)
+PROJECT_DIR = os.path.dirname(THIS_DIR)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -106,6 +111,8 @@ ROOT_URLCONF = 'gabinet.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'gabinet.wsgi.application'
+
+MAIN_TEMPLATE_DIR = os.path.join(PROJECT_DIR, 'templates')
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
