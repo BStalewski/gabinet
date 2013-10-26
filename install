@@ -22,3 +22,21 @@ git clone git@github.com:BStalewski/gabinet.git;cd gabinet
 
 pip install -r pip_requirements
 
+cd /etc/nginx/sites-available
+sudo ln -s ~/projects/gabinet/gabinet/conf/production/gabinet gabinet
+cd ../sites-enabled/
+sudo ln -s ../sites-available/gabinet .
+sudo rm default
+
+cd /etc/supervisor/conf.d/
+sudo ln -s ~/projects/gabinet/gabinet/conf/production/gabinet_supervisor.conf .
+sudo ln -s ~/projects/gabinet/gabinet/conf/production/nginx_supervisor.conf .
+
+# add "daemon off" to nginx.conf file
+cd /etc/nginx/
+sudo vim nginx.conf # add this line
+
+sudo nginx -s stop
+sudo update-rc.d -f nginx disable
+
+sudo mkdir -p /var/www/logs
