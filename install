@@ -40,3 +40,7 @@ sudo nginx -s stop
 sudo update-rc.d -f nginx disable
 
 sudo mkdir -p /var/www/logs
+
+sudo mkdir -p /var/www/gabinet
+cd /var/www/gabinet
+sudo ln -s /home/ubuntu/projects/gabinet/gabinet/collected_static collected_static
